@@ -1,0 +1,13 @@
+loan_id,loan_date,campus,item_category
+L001,2026-09-01,StPaul,laptop
+L002,2026-09-01,Online,camera
+L003,2026-09-02,Tucson,projector
+L004,2026-09-02,Minneapolis,laptop
+L005,2026-09-03,StPaul,camera
+L006,2026-09-03,Online,laptop
+L007,2026-09-04,Tucson,projector
+L008,2026-09-04,Minneapolis,laptop
+L009,2026-09-05,StPaul,camera
+L010,2026-09-05,Online,laptop
+L011,2026-09-06,Tucson,projector
+L012,2026-09-06,Minneapolis,laptop
