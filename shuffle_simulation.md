@@ -6,13 +6,17 @@ The map step processes each partition separately and produces key-value pairs su
 
 The shuffle step groups together all values with the same item category, even when they come from different partition files.
 
+
 ## Grouped Results
 
-- laptop: 1, 1, 1, 1, and other values from the partitions
-- camera: 1, 1, 1, 1, and other values from the partitions
-- projector: 1, 1, 1, 1, and other values from the partitions
+After the map outputs are grouped by item category, the shuffle step produces these groups:
 
-Each 1 represents one loan record. The reduce step adds the values in each group to calculate the total number of loans for that category.
+* **laptop:** twenty values of 1, totaling 20 loans
+* **camera:** ten values of 1, totaling 10 loans
+* **projector:** ten values of 1, totaling 10 loans
+
+Each value of 1 represents one loan record. The reduce step adds the values in each group to calculate the final totals. The three category totals add up to 40 loan records, matching the dataset.
+
 
 ## Connection to Distributed Systems
 

@@ -5,3 +5,6 @@ This project demonstrates the three main stages of MapReduce: map, shuffle, and 
 At a larger scale, distributed systems can process partitions on different computers. However, transferring intermediate data between computers can create network bottlenecks. Data skew can also occur when one category contains far more records than others, causing some tasks to take longer. Efficient partitioning and data movement are important for good performance.
 
 Apache Spark improves on traditional MapReduce by organizing operations into a directed acyclic graph, or DAG, and optimizing how work is executed. Spark can keep useful data in memory to reduce repeated disk reads and can optimize shuffle operations. This project does not run Spark directly, but it demonstrates the basic ideas behind distributed data processing.
+
+Building and testing the Python scripts helped me understand how the map, shuffle, and reduce stages work together. I also learned that splitting data into partitions does not automatically make a program faster. Actual performance depends on the dataset size, available computing resources, and the overhead of combining results. This gave me a better understanding of why distributed processing is useful for larger workloads.
+
