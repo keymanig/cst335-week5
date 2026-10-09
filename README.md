@@ -2,35 +2,37 @@
 
 ## Project Overview
 
-This project simulates a MapReduce-style workflow using Python and sample university equipment loan records. It demonstrates partitions, mapping, shuffling, reducing, and the differences between sequential and partitioned processing.
+For this assignment, I created a small MapReduce simulation using Python and sample equipment loan data. The goal was to learn how data can be split into smaller files, processed separately, and combined to get final results. I used four partitions with loan records for laptops, cameras, and projectors.
 
-## Project Structure
+## Project Files
 
-- data/loans_full.csv: Full dataset containing 40 loan records.
-- data/partition1.csv through partition4.csv: Four smaller CSV partitions.
-- map_step.py: Reads each partition and generates key-value pairs.
-- map_outputs/: Stores the intermediate map output CSV files.
-- reduce_step.py: Groups map outputs and calculates category totals.
-- results/final_counts.csv: Stores the final aggregated results.
-- shuffle_simulation.md: Explains the shuffle stage.
-- performance_notes.md: Compares sequential and partitioned workflows.
-- reflection.md: Discusses MapReduce and Spark concepts.
+* `data/` contains the full loan dataset and the four partition CSV files.
+* `map_step.py` reads each partition and creates the map output files.
+* `map_outputs/` stores the results from the map step.
+* `reduce_step.py` groups the data by item category and counts the loans.
+* `results/final_counts.csv` contains the final totals.
+* `shuffle_simulation.md` explains how the shuffle step groups the data.
+* `performance_notes.md` compares processing one file with processing multiple partitions.
+* `reflection.md` explains what I learned about MapReduce and Spark.
 
-## How to Run
+## How to Run the Project
 
-Run these commands from the project folder:
+I used Python to run the scripts. From the project folder, run:
 
-    python3 map_step.py
-    python3 reduce_step.py
+```bash
+python3 map_step.py
+python3 reduce_step.py
+```
 
-The map script creates intermediate files in map_outputs/. The reduce script groups the values and saves final totals in results/final_counts.csv.
+The first script processes the partition files, and the second script combines the results and saves the final counts.
 
-## Distributed Processing Concepts
+## What I Learned
 
-The four CSV partitions represent separate portions of a larger dataset. The map stage processes records independently, the shuffle stage groups records by item category, and the reduce stage sums the values.
+This assignment helped me understand how MapReduce works through the map, shuffle, and reduce steps. Instead of processing all the data as one large file, the data can be split into partitions and processed separately before the results are combined.
 
-This project runs locally and does not use a real distributed cluster or actual parallel processing.
+I also learned that partitioning can help with larger datasets because different parts of the work can run on different computers. My project runs locally on my computer, so it simulates the process rather than using an actual distributed system.
 
-## AI Assistance Note
+## AI Assistance
 
-AI assistance was used to help draft and review the Python scripts and project documentation. The code and explanations should be reviewed and tested by the student to ensure understanding.
+I used AI to help me work through the Python code and organize some of the project documentation. I tested the scripts and used the results to check that the workflow was working as expected.
+
